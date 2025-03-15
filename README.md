@@ -2,6 +2,8 @@
 
 A detailed, interactive 3D visualization of our solar system built with Three.js. This project features accurate planetary rotations, orbits, and detailed information cards for each celestial body.
 
+![ss](https://github.com/user-attachments/assets/a3dc3d5a-1e97-4a83-ba18-cb5d30870a58)
+
 ## Features
 
 - Realistic 3D models of all planets, the Sun, and Earth's Moon
@@ -90,6 +92,8 @@ npx vite preview
   - Right click/touch drag to pan
   - Scroll/pinch to zoom
 - Navigate through facts using the arrow buttons on information cards
+
+![ss2](https://github.com/user-attachments/assets/2835b085-354b-4d95-bc3a-a1d43560366a)
 
 ## Features in Detail
 

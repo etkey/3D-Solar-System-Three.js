@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    z-index: 100;
+    position:absolute;
+    background-color: #7d7473;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    max-height: 100px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.card-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.card-header .header-text {
+    flex: 1;
+}
+
+.card-body {
+    padding: 16px;
+    border-top: 1px solid #eee;
+}
+
+.card.expanded {
+    max-height: 500px; /* Adjust based on total content height */
+    width: 300px;
+    transition: max-height 0.5s ease;
+}
+
+#earth-card {
+    position: absolute;
+    transform: translate(0, -50%); /* Sadece dikey merkezleme */
+    pointer-events: auto;
+    z-index: 1000;
+    margin-left: 10px; 
+}
+
+.planet-card {
+    position: absolute;
+    pointer-events: auto;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    width: auto; /* Başlangıçta sadece header'ı gösterecek kadar genişlik */
+}
+
+.planet-card .card-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: auto;
+}
+
+.planet-card .planet-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.planet-card .planet-name {
+    margin: 0;
+    font-size: 1.2em;
+    color: white;
+}
+
+.planet-card .card-content {
+    display: none; /* Başlangıçta içerik gizli */
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.planet-card.expanded {
+    width: 300px; /* Genişletildiğinde tam genişlik */
+}
+
+.planet-card.expanded .card-content {
+    display: block; /* Genişletildiğinde içerik görünür */
+}
+
+.planet-card:hover {
+    background: rgba(0, 0, 0, 0.9);
+}

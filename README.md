@@ -55,12 +55,12 @@ A detailed, interactive 3D visualization of our solar system built with Three.js
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/solar-system-visualization.git
+git clone https://github.com/yourusername/solar-system-visualization.git](https://github.com/etkey/3D-Solar-System-Three.js.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd solar-system-visualization
+cd 3D-Solar-System-Three.js
 ```
 
 3. Install and run using npx:

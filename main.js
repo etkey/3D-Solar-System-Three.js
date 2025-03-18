@@ -2,8 +2,6 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { getFresnelMat } from "./assets/shaders/getFresnelMat.js";
 
-const basePath = "/3D-Solar-System-Three.js/assets/";
-
 const canvas = document.querySelector("canvas");
 
 const w = window.innerWidth;
@@ -45,7 +43,7 @@ let animationsEnabled = true;
 const planetInfo = {
     mercury: {
         name: "Mercury",
-        image: basePath + "mercury/8k_mercury.jpg",
+        image: "assets/mercury/8k_mercury.jpg",
         diameter: "4,879 km",
         distanceFromSun: "57.9 million km",
         orbitalPeriod: "88 Earth days",
@@ -54,7 +52,7 @@ const planetInfo = {
     },
     venus: {
         name: "Venus",
-        image: basePath + "venus/8k_venus_surface.jpg",
+        image: "assets/venus/8k_venus_surface.jpg",
         diameter: "12,104 km",
         distanceFromSun: "108.2 million km",
         orbitalPeriod: "225 Earth days",
@@ -63,7 +61,7 @@ const planetInfo = {
     },
     earth: {
         name: "Earth",
-        image: basePath + "earth-assets/8k_earth_daymap.jpg",
+        image: "assets/earth-assets/8k_earth_daymap.jpg",
         diameter: "12,742 km",
         distanceFromSun: "149.6 million km",
         orbitalPeriod: "365.25 days",
@@ -72,7 +70,7 @@ const planetInfo = {
     },
     mars: {
         name: "Mars",
-        image: basePath + "mars/8k_mars.jpg",
+        image: "assets/mars/8k_mars.jpg",
         diameter: "6,779 km",
         distanceFromSun: "227.9 million km",
         orbitalPeriod: "687 Earth days",
@@ -81,7 +79,7 @@ const planetInfo = {
     },
     jupiter: {
         name: "Jupiter",
-        image: basePath + "jupiter/8k_jupiter.jpg",
+        image: "assets/jupiter/8k_jupiter.jpg",
         diameter: "139,820 km",
         distanceFromSun: "778.5 million km",
         orbitalPeriod: "11.86 Earth years",
@@ -90,7 +88,7 @@ const planetInfo = {
     },
     saturn: {
         name: "Saturn",
-        image: basePath + "saturn/8k_saturn.jpg",
+        image: "assets/saturn/8k_saturn.jpg",
         diameter: "116,460 km",
         distanceFromSun: "1.434 billion km",
         orbitalPeriod: "29.45 Earth years",
@@ -99,7 +97,7 @@ const planetInfo = {
     },
     uranus: {
         name: "Uranus",
-        image: basePath + "uranus/2k_uranus.jpg",
+        image: "assets/uranus/2k_uranus.jpg",
         diameter: "50,724 km",
         distanceFromSun: "2.871 billion km",
         orbitalPeriod: "84 Earth years",
@@ -108,7 +106,7 @@ const planetInfo = {
     },
     neptune: {
         name: "Neptune",
-        image: basePath + "neptune/2k_neptune.jpg",
+        image: "assets/neptune/2k_neptune.jpg",
         diameter: "49,244 km",
         distanceFromSun: "4.495 billion km",
         orbitalPeriod: "164.81 Earth years",
@@ -117,7 +115,7 @@ const planetInfo = {
     },
     sun: {
         name: "Sun",
-        image: basePath + "sun/8k_sun.jpg",
+        image: "assets/sun/8k_sun.jpg",
         diameter: "1,392,700 km",
         distanceFromSun: "0 km",
         orbitalPeriod: "N/A",
@@ -126,7 +124,7 @@ const planetInfo = {
     },
     moon: {
         name: "Moon",
-        image: basePath + "moon/8k_moon.jpg",
+        image: "assets/moon/8k_moon.jpg",
         diameter: "3,475 km",
         distanceFromSun: "384,400 km (from Earth)",
         orbitalPeriod: "27.3 Earth days",
@@ -332,7 +330,7 @@ document.querySelectorAll('.planet-card').forEach(card => {
                     }
                 }
             });
-            
+
             card.classList.toggle('expanded');
             
             const planetId = card.id.split("-")[0];
@@ -634,7 +632,7 @@ const updateLoadingProgress = () => {
 
 async function initApp() {
     const loadingGif = new Image();
-    loadingGif.src = basePath + 'loading-screen/solarsystem.gif';
+    loadingGif.src = 'assets/loading-screen/solarsystem.gif';
     
     await new Promise((resolve) => {
         loadingGif.onload = () => {
@@ -647,22 +645,22 @@ async function initApp() {
     });
 
     const textures = await Promise.all([
-        loadTexture(basePath + "ESO_-_Milky_Way1.jpg"),
-        loadTexture(basePath + "earth-assets/8k_earth_daymap.jpg"),
-        loadTexture(basePath + "earth-assets/8k_earth_clouds.jpg"),
-        loadTexture(basePath + "earth-assets/8k_earth_nightmap.jpg"),
-        loadTexture(basePath + "earth-assets/8k_earth_specular_map.png"),
-        loadTexture(basePath + "moon/8k_moon.jpg"),
-        loadTexture(basePath + "mercury/8k_mercury.jpg"),
-        loadTexture(basePath + "venus/8k_venus_surface.jpg"),
-        loadTexture(basePath + "venus/4k_venus_atmosphere.jpg"),
-        loadTexture(basePath + "mars/8k_mars.jpg"),
-        loadTexture(basePath + "jupiter/8k_jupiter.jpg"),
-        loadTexture(basePath + "saturn/8k_saturn.jpg"),
-        loadTexture(basePath + "saturn/saturn_ring.png"),
-        loadTexture(basePath + "uranus/2k_uranus.jpg"),
-        loadTexture(basePath + "neptune/2k_neptune.jpg"),
-        loadTexture(basePath + "sun/8k_sun.jpg")
+        loadTexture("assets/ESO_-_Milky_Way1.jpg"),
+        loadTexture("assets/earth-assets/8k_earth_daymap.jpg"),
+        loadTexture("assets/earth-assets/8k_earth_clouds.jpg"),
+        loadTexture("assets/earth-assets/8k_earth_nightmap.jpg"),
+        loadTexture("assets/earth-assets/8k_earth_specular_map.png"),
+        loadTexture("assets/moon/8k_moon.jpg"),
+        loadTexture("assets/mercury/8k_mercury.jpg"),
+        loadTexture("assets/venus/8k_venus_surface.jpg"),
+        loadTexture("assets/venus/4k_venus_atmosphere.jpg"),
+        loadTexture("assets/mars/8k_mars.jpg"),
+        loadTexture("assets/jupiter/8k_jupiter.jpg"),
+        loadTexture("assets/saturn/8k_saturn.jpg"),
+        loadTexture("assets/saturn/saturn_ring.png"),
+        loadTexture("assets/uranus/2k_uranus.jpg"),
+        loadTexture("assets/neptune/2k_neptune.jpg"),
+        loadTexture("assets/sun/8k_sun.jpg")
     ]);
 }
 
@@ -701,7 +699,7 @@ function createPlanet({
     if (rings && name === "Saturn") {
         const ringGeometry = new THREE.RingGeometry(size * 1.2, size * 2.2, 64);
         const ringMaterial = new THREE.MeshPhongMaterial({
-            map: loader.load(basePath + "saturn/saturn_ring.png"),
+            map: loader.load("assets/saturn/saturn_ring.png"),
             side: THREE.DoubleSide,
             transparent: true,
             opacity: 0.9,
@@ -751,7 +749,7 @@ const rotationSpeedMultipliers = {
 
 const scene = new THREE.Scene();
 
-loader.load(basePath + "ESO_-_Milky_Way1.jpg", (texture) => {
+loader.load("assets/ESO_-_Milky_Way1.jpg", (texture) => {
     texture.mapping = THREE.EquirectangularReflectionMapping;
     scene.background = texture;
 });
@@ -770,7 +768,7 @@ scene.add(earthPivot);
 
 const moonGeo = new THREE.IcosahedronGeometry(0.273, 15);
 const moonMat = new THREE.MeshBasicMaterial({
-    map: loader.load(basePath + "moon/8k_moon.jpg"),
+    map: loader.load("assets/moon/8k_moon.jpg"),
 });
 const moonMesh = new THREE.Mesh(moonGeo, moonMat);
 
@@ -782,11 +780,11 @@ moonMesh.position.set(3, 3, 0);
 const earthGeo = new THREE.IcosahedronGeometry(1.0, 12);
 
 const mat = new THREE.MeshStandardMaterial({
-    map: loader.load(basePath + "earth-assets/8k_earth_daymap.jpg"),
+    map: loader.load("assets/earth-assets/8k_earth_daymap.jpg"),
 });
 
 const cloudMat = new THREE.MeshStandardMaterial({
-    map: loader.load(basePath + "earth-assets/8k_earth_clouds.jpg"),
+    map: loader.load("assets/earth-assets/8k_earth_clouds.jpg"),
     transparent: true,
     opacity: 0.5,
     blending: THREE.AdditiveBlending,
@@ -795,12 +793,12 @@ const cloudMat = new THREE.MeshStandardMaterial({
 const glowMesh = new THREE.Mesh(earthGeo, fresnelMat);
 
 const earthNightMat = new THREE.MeshBasicMaterial({
-    map: loader.load(basePath + "earth-assets/8k_earth_nightmap.jpg"),
+    map: loader.load("assets/earth-assets/8k_earth_nightmap.jpg"),
     blending: THREE.AdditiveBlending,
 });
 
 const earthSpecularMat = new THREE.MeshBasicMaterial({
-    map: loader.load(basePath + "earth-assets/8k_earth_specular_map.png"),
+    map: loader.load("assets/earth-assets/8k_earth_specular_map.png"),
     transparent: true,
     blending: THREE.AdditiveBlending,
 });
@@ -821,7 +819,7 @@ earthGroup.add(glowMesh);
 const mercury = createPlanet({
     name: "Mercury",
     size: 0.383,
-    textureUrl: basePath + "mercury/8k_mercury.jpg",
+    textureUrl: "assets/mercury/8k_mercury.jpg",
     position: [45.46, 0, 0],
 });
 const mercuryPivot = new THREE.Object3D();
@@ -831,9 +829,9 @@ scene.add(mercuryPivot);
 const venus = createPlanet({
     name: "Venus",
     size: 0.949,
-    textureUrl: basePath + "venus/8k_venus_surface.jpg",
+    textureUrl: "assets/venus/8k_venus_surface.jpg",
     position: [84.93, 0, 0],
-    atmosphereTextureUrl: basePath + "venus/4k_venus_atmosphere.jpg",
+    atmosphereTextureUrl: "assets/venus/4k_venus_atmosphere.jpg",
     atmosphereScale: 1.005,
 });
 const venusPivot = new THREE.Object3D();
@@ -843,7 +841,7 @@ scene.add(venusPivot);
 const mars = createPlanet({
     name: "Mars",
     size: 0.532,
-    textureUrl: basePath + "mars/8k_mars.jpg",
+    textureUrl: "assets/mars/8k_mars.jpg",
     position: [178.9, 0, 0],
 });
 const marsPivot = new THREE.Object3D();
@@ -853,7 +851,7 @@ scene.add(marsPivot);
 const jupiter = createPlanet({
     name: "Jupiter",
     size: 10.97,
-    textureUrl: basePath + "jupiter/8k_jupiter.jpg",
+    textureUrl: "assets/jupiter/8k_jupiter.jpg",
     position: [611.1, 0, 0],
 });
 const jupiterPivot = new THREE.Object3D();
@@ -863,7 +861,7 @@ scene.add(jupiterPivot);
 const saturn = createPlanet({
     name: "Saturn",
     size: 9.144,
-    textureUrl: basePath + "saturn/8k_saturn.jpg",
+    textureUrl: "assets/saturn/8k_saturn.jpg",
     position: [1125, 0, 0],
     rings: true
 });
@@ -875,7 +873,7 @@ scene.add(saturnPivot);
 const uranus = createPlanet({
     name: "Uranus",
     size: 3.981,
-    textureUrl: basePath + "uranus/2k_uranus.jpg",
+    textureUrl: "assets/uranus/2k_uranus.jpg",
     position: [2258, 0, 0],
 });
 const uranusPivot = new THREE.Object3D();
@@ -885,7 +883,7 @@ scene.add(uranusPivot);
 const neptune = createPlanet({
     name: "Neptune",
     size: 3.866,
-    textureUrl: basePath + "neptune/2k_neptune.jpg",
+    textureUrl: "assets/neptune/2k_neptune.jpg",
     position: [3535, 0, 0],
 });
 const neptunePivot = new THREE.Object3D();
@@ -893,7 +891,7 @@ neptunePivot.add(neptune);
 scene.add(neptunePivot);
 
 const sunMaterial = new THREE.MeshBasicMaterial({
-    map: loader.load(basePath + "sun/8k_sun.jpg"),
+    map: loader.load("assets/sun/8k_sun.jpg"),
 });
 const sunGeometry = new THREE.IcosahedronGeometry(11.537, 15);
 const sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
@@ -969,16 +967,16 @@ function animate() {
     earthCloudMesh.rotation.y += earthRotationSpeed * rotationSpeedMultipliers.earth * 1.05;
 
     if (animationsEnabled) {
-    mercuryPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.mercury;
-    venusPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.venus;
-    earthPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.earth;
-    marsPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.mars;
-    jupiterPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.jupiter;
-    saturnPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.saturn;
-    uranusPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.uranus;
-    neptunePivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.neptune;
-    moonPivot.rotation.y += moonOrbitSpeed;
-        }
+        mercuryPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.mercury;
+        venusPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.venus;
+        earthPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.earth;
+        marsPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.mars;
+        jupiterPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.jupiter;
+        saturnPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.saturn;
+        uranusPivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.uranus;
+        neptunePivot.rotation.y += earthOrbitSpeed * orbitalSpeedMultipliers.neptune;
+        moonPivot.rotation.y += moonOrbitSpeed;
+    }
 
     if (moonMesh) {
         moonMesh.rotation.y += earthRotationSpeed;
